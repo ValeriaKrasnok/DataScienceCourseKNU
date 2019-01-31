@@ -1,2 +1,2 @@
 # DataScienceCourseKNU
-test-repo
+test-repository
