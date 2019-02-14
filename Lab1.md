@@ -123,7 +123,7 @@ Levels: adult baby child
 [1]  1  2  3  4 NA  6  7 NA  9 NA 11
 > is.na(x11)
 [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE  TRUE FALSE
-## is.na function - is there any NA in the data?
+##is.na function - is there any NA in the data?
 > sum(is.na(x11))
 [1] 3
 > ##number of NA in vector x11
