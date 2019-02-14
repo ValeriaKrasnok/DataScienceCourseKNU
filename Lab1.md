@@ -114,8 +114,7 @@ Levels: adult baby child
 ##factor function was used to represent categorical data 
 ```R
 ```
-6. Знайти індекс першого значення NA в векторі 1, 2, 3, 4, NA, 6, 7, NA, 9, NA,
-11. Знайти кількість значень NA
+6. Знайти індекс першого значення NA в векторі 1, 2, 3, 4, NA, 6, 7, NA, 9, NA, 11. Знайти кількість значень NA
 ```R
 ```
 > x11<-c(1, 2, 3, 4, NA, 6, 7, NA, 9,NA,11)
