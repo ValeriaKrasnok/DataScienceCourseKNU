@@ -186,7 +186,7 @@
    > y[10,"b"]
  [1] 10
  ##was used function df[rows,columns], where number of row is 10 and column b is 10.
- y$cc
+ >y$cc
   [1] e l o w h b n p s f a k v w q p p d f z a i o u q t n a n r s y t w v k w p s p
  [41] v r b c o z j j p c h v e v m m q j u p v f a c w t w a p u o n v u r h h f u z
  [81] q g s w n h l z r y v c p g o n u t k s
