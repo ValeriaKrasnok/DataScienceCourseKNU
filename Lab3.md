@@ -26,3 +26,9 @@ z<-c(145,78,10,2,1,96,3,454)
 > above(z)
 [1] 145  78  96 454
 ##was used function above() for the new vector z
+my_ifelse <- function(z,exp,n){
+if(exp==">"){
+res=z[z>n]
+}if(exp=="<"){
+ res=z[z<n]
+}
