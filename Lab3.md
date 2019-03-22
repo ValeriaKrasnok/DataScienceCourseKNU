@@ -71,5 +71,51 @@ my_ifelse<-function(z,exp,n){
 ##for example, if someone want to print this function with another condition that was not condition of my_ifelse, function will print all values of vector q.
 > my_ifelse(q,exp="=",121)
 [1] 100 785  45 963 478 256  12   0  36 968  78  15  12
-
+```R
+```
+4.Функція columnmean(x, removeNA), яка розраховує середнє значення
+(mean) по кожному стовпцю матриці, або data frame. Логічний параметр
+removeNA вказує, чи видаляти NA значення. По замовчуванню він
+дорівнює TRUE.
+```R
+```
+  columnmeans <- function(w,removeNA=TRUE){
+    n <- ncol(w)
+    v <- numeric(n)
+      for (i in 1:n) {
+     v[i] <- mean(w[ ,i], na.rm=removeNA)
+    }
+    v
+    }
+##was created new function columnmeans for finding mean of each column
+##for using this function was created data frame with 3 columns.In the result we would to find 3 values of coloumn mean
+> x <- c(145,89,74,23,56,89,41,2,3,145,NA,47,56)
+> x
+[1] 145  89  74  23  56  89  41   2   3 145  NA  47  56
+> y <-c(145,896,234,74,589,NA,785,0,NA,123,45,NA,78)
+> y
+[1] 145 896 234  74 589  NA 785   0  NA 123  45  NA  78
+> z <- c(74,458,632,10,NA,478,569,0,10,478,663,NA,10)
+> z
+[1]  74 458 632  10  NA 478 569   0  10 478 663  NA  10
+> w <- data.frame(x,y,z)
+> w
+x   y   z
+1  145 145  74
+2   89 896 458
+3   74 234 632
+4   23  74  10
+5   56 589  NA
+6   89  NA 478
+7   41 785 569
+8    2   0   0
+9    3  NA  10
+10 145 123 478
+11  NA  45 663
+12  47  NA  NA
+13  56  78  10
+##columnmean function of "w" data frame has a view as below
+> columnmeans(w)
+[1]  64.16667 296.90000 307.45455
+##above we get 3 mean values of columns in data frame w
  
