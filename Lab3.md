@@ -116,6 +116,5 @@ x   y   z
 ##columnmean function of "w" data frame has a view as below
 > columnmeans(w)
 [1]  64.16667 296.90000 307.45455
-
 ##above we get 3 mean values of columns in data frame w even we have some values of NA.
 
