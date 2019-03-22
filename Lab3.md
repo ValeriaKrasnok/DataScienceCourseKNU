@@ -4,7 +4,7 @@
 ```R
 ```
 add2 <- function(x, y) {
-  x + y
+     x + y
 }
 ##created a function add2 for making the sum of 2 values
 ##for example we can use 2 values 10 and 15 for using add2 function
@@ -17,9 +17,8 @@ add2 <- function(x, y) {
 ```R
 ```
 above <- function(x,n=10) {
-  x[x > n]
+      x[x > n]
 }
-
 z<-c(145,78,10,2,1,96,3,454)
 > z
 [1] 145  78  10   2   1  96   3 454
@@ -52,7 +51,7 @@ my_ifelse<-function(z,exp,n){
   }
   res
 }
-##was created function my_ifelse with different conditions such as “<”, “>”, “<=”, “>=”, “==”.With help of button "run" this function was printed in console.
+##was created function my_ifelse with different conditions such as “<”, “>”, “<=”, “>=”, “==”.With help of button "run" this function was printed to console.
 ##for illustration of this function was created new vector q
 > q <- c(100,785,45,963,478,256,12,0,36,968,78,15,12)
 > q
@@ -68,7 +67,7 @@ my_ifelse<-function(z,exp,n){
 [1] 100 785 963 478 256 968
 > my_ifelse(q,exp="==",100)
 [1] 100
-##for example, if someone want to print this function with another condition that was not condition of my_ifelse, function will print all values of vector q.
+##for example, if someone want to print this function with another wrong condition that was not condition of my_ifelse, function will print all values of vector q.
 > my_ifelse(q,exp="=",121)
 [1] 100 785  45 963 478 256  12   0  36 968  78  15  12
 ```R
@@ -80,15 +79,15 @@ removeNA вказує, чи видаляти NA значення. По замо�
 ```R
 ```
 columnmeans <- function(w,removeNA=TRUE){
-  n <- ncol(w)
-  v <- numeric(n)
-  for (i in 1:n) {
-    v[i] <- mean(w[ ,i], na.rm=removeNA)
-  }
+          n <- ncol(w)
+          v <- numeric(n)
+         for (i in 1:n) {
+       v[i] <- mean(w[ ,i], na.rm=removeNA)
+ }
   v
 }
 ##was created new function columnmeans for finding mean of each column
-##for using this function was created data frame with 3 columns.In the result we would to find 3 values of coloumn mean
+##for using this function was created data frame with 3 columns.In the result we would  find 3 values of coloumn mean.
 > x <- c(145,89,74,23,56,89,41,2,3,145,NA,47,56)
 > x
 [1] 145  89  74  23  56  89  41   2   3 145  NA  47  56
@@ -116,6 +115,5 @@ x   y   z
 13  56  78  10
 ##columnmean function of "w" data frame has a view as below
 > columnmeans(w)
-[1]  64.16667 296.90000 307.45455
-##above we get 3 mean values of columns in data frame w
+[1]  64.16667 296.90000 307.45455##above we get 3 mean values of columns in data frame w even we have some values of NA.
 
