@@ -335,8 +335,6 @@ nrow(df)
 29    45     252 14.9   81     5  29
 30   115     223  5.7   79     5  30
 31    37     279  7.4   76     5  31
-> mean(df3$Ozone)
-[1] NA
 > mean(df3$Ozone, na.rm=TRUE)
 [1] 23.61538
 ##was created new data frame - df3 with only Month = 5
