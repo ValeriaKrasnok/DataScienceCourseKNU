@@ -33,3 +33,14 @@ for (i in 1:length(my.path)){
   my.data[[i]] <- read.csv(my.path[[i]])
 }
 
+```R
+```
+df <- read.csv("D:/Documents/rprog_data_specdata/specdata")
+
+
+pmean <- function(df, sulfate, id = 1:332) {
+    for (i in id) {
+        mean <- c(mean,...)
+    }
+        
+        }
