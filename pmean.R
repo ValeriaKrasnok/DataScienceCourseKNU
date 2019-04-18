@@ -66,6 +66,9 @@ complete <- function(directory, id=1:332 ){
    }
    return( cr )
  }
+head(cr)
+summary(cr)
+length(cr)
 ```R
 ```
 
