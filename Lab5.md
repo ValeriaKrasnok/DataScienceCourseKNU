@@ -135,8 +135,40 @@ complete <- function(directory, id=1:332 ){
 «cor» з параметрами за замовчуванням.
 ```R
 ```
-corr <- function (directory, threshold=0, id=1:332){
-
-}
-
-
+>corr <- function(directory, threshold = 0) {
+   files <- list.files( path = directory)
+   cr <- c() 
+   for(i in 1:length(files)){
+     data <- read.csv( paste(directory, "/", files[i], sep="") )
+     data <- data[complete.cases(data),]
+     if ( nrow(data) > threshold ) {
+       cr <- c(cr, cor(data$sulfate, data$nitrate) ) 
+     }
+   }
+   return( cr )
+ }
+ ##was created function corr
+ ##threshold is a numeric vector of length 1 indicating the number of completely observed observations required to compute the correlation between nitrate and sulfate; the default is 0)
+ ##below some examples of using function corr
+ cr <- corr("specdata", 150)
+>head(cr)
+[1] -0.01895754 -0.14051254 -0.04389737 -0.06815956 -0.12350667 -0.07588814
+>summary(cr)
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+-0.21057 -0.04999  0.09463  0.12525  0.26844  0.76313 
+ cr <- corr("specdata", 4000)
+> head(cr)
+NULL
+> summary(cr)
+Length  Class   Mode 
+     0   NULL   NULL 
+> length(cr)
+[1] 0
+> cr <- corr("specdata", 10)
+> head(cr)
+[1] -0.22255256 -0.01895754 -0.14051254 -0.04389737 -0.06815956 -0.12350667
+> summary(cr)
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
+-0.54537 -0.05363  0.10128  0.13044  0.27401  0.89222 
+> length(cr)
+[1] 316
