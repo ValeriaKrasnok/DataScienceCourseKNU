@@ -203,4 +203,20 @@
  $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...
  > str(mean)
 function (x, ...)  
->
+my_f <- function(x) {
+    y <- x
+    z <- y ** x
+    z
+}
+> debugSource('~/test_1.R')
+> my_f(3)
+Called from: eval(expr, envir, enclos)
+Browse[1]> n
+debug at ~/test_1.R#2: y <- x
+Browse[2]> n
+debug at ~/test_1.R#3: z <- y^x
+Browse[2]> n
+debug at ~/test_1.R#4: z
+Browse[2]> n
+[1] 27
+Красная точка, sourse, debug
