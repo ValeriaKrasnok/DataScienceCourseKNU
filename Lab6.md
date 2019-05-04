@@ -144,6 +144,7 @@ observationA observationB
 ##was used sapply function
 ##each of this functions have the same result
 ```R
+```
 10.Для вбудованого набору даних InsectSprays знайти середнє count для
 кожного spray.
 ```R
@@ -190,6 +191,6 @@ $E
 
 $F
 [1] 16.66667
-##calculated mean value of every type of spray with help of two functions:sapply and apply that have th same result
+##calculated mean value of every type of spray with help of two functions:sapply and apply that have the same result
 ```R
 ```
