@@ -1,9 +1,33 @@
-prepare_set <- function(olympics.csv) {
-df <- read.csv("olympics.csv", skip = 1, header = TRUE, encoding="UTF-8",
-stringsAsFactors = FALSE)
-names(df) <- c("Country", "Summer","Gold", "Silver", "Bronze", "Total", "Winter", "Gold.1", "Silver.1", "Bronze.1","Total.1", "Games", "Gold.2", "Silver.2", "Bronze.2", "Combined.total")
-df
+```R
+```
+Напишіть функцію prepare_set <- function(file_name) {} яка в якості аргументу
+приймає ім’я файлу і повертає дата фрейм. Збережіть цей дата фрейм в змінну
+olympics
+```R
+```
+prepare_set <- function(file_name) {
+    df <- read.csv(file_name, skip = 1, header = TRUE, encoding="UTF-8", stringsAsFactors = FALSE)
+    names(df) <- c("Country", "Summer","Gold", "Silver", "Bronze", "Total", "Winter", "Gold.1", "Silver.1",                                  "Bronze.1","Total.1", "Games", "Gold.2", "Silver.2","Bronze.2", "Combined.total")
+    df
 }
+olympics <- prepare_set("olympics.csv")
+> head(olympics)
+                    Country Summer Gold Silver Bronze Total Winter Gold.1
+1         Afghanistan (AFG)     13    0      0      2     2      0      0
+2             Algeria (ALG)     12    5      2      8    15      3      0
+3           Argentina (ARG)     23   18     24     28    70     18      0
+4             Armenia (ARM)      5    1      2      9    12      6      0
+5   Australasia (ANZ) [ANZ]      2    3      4      5    12      0      0
+6 Australia (AUS) [AUS] [Z]     25  139    152    177   468     18      5
+  Silver.1 Bronze.1 Total.1 Games Gold.2 Silver.2 Bronze.2 Combined.total
+1        0        0       0    13      0        0        2              2
+2        0        0       0    15      5        2        8             15
+3        0        0       0    41     18       24       28             70
+4        0        0       0    11      1        2        9             12
+5        0        0       0     2      3        4        5             12
+6        3        4      12    43    144      155      181            480
+
+##was created a function prepare_set with different conditions and printed headers of data frame
 > prepare_set(olympics.csv)
     Country Summer Gold Silver Bronze
 1                              Afghanistan (AFG)     13    0      0      2
@@ -449,45 +473,17 @@ df
 145        1              8
 146        4             17
 147     6078          17579
-> 
+##printed a function
 > olympics <- prepare_set(olympics.csv)
 > olympics
+##function prepare_set was assigned to olympics
+```R
+```
 4. Необхідно привести назви країн до виду "Afghanistan", "Algeria" і т.п. Для
 цього можна використати функцію str_split бібліотеки stringr. В назві країн
 не повинно бути пробілів на початку та в кінці.
-
-
-
-
-
-
-
-
-prepare_set <- function(file_name) {
-    df <- read.csv(file_name, skip = 1, header = TRUE,                                   encoding="UTF-8", stringsAsFactors = FALSE)
-    names(df) <- c("Country", "Summer","Gold", "Silver", "Bronze",                            "Total", "Winter", "Gold.1", "Silver.1",                                  "Bronze.1","Total.1", "Games", "Gold.2", "Silver.2",                      "Bronze.2", "Combined.total")
-    df
-}
-
-olympics <- prepare_set("olympics.csv")
-> head(olympics)
-                    Country Summer Gold Silver Bronze Total Winter Gold.1
-1         Afghanistan (AFG)     13    0      0      2     2      0      0
-2             Algeria (ALG)     12    5      2      8    15      3      0
-3           Argentina (ARG)     23   18     24     28    70     18      0
-4             Armenia (ARM)      5    1      2      9    12      6      0
-5   Australasia (ANZ) [ANZ]      2    3      4      5    12      0      0
-6 Australia (AUS) [AUS] [Z]     25  139    152    177   468     18      5
-  Silver.1 Bronze.1 Total.1 Games Gold.2 Silver.2 Bronze.2 Combined.total
-1        0        0       0    13      0        0        2              2
-2        0        0       0    15      5        2        8             15
-3        0        0       0    41     18       24       28             70
-4        0        0       0    11      1        2        9             12
-5        0        0       0     2      3        4        5             12
-6        3        4      12    43    144      155      181            480
-
-
-
+```R
+```
 > prepare_set <- function(file_name) {
 +     df <- read.csv(file_name, skip = 1, header = TRUE,                                   encoding="UTF-8", stringsAsFactors = FALSE)
 +     names(df) <- c("Country", "Summer","Gold", "Silver", "Bronze", 
@@ -498,7 +494,7 @@ olympics <- prepare_set("olympics.csv")
 +     df$Country <- sapply(country_names, "[", 1)
 +     df
 + }
-> 
+##to contodions of function was added a new condition and printed
 > olympics <- prepare_set("olympics.csv")
 > olympics$Country
   [1] "Afghanistan "                      "Algeria "                         
@@ -574,7 +570,8 @@ olympics <- prepare_set("olympics.csv")
 [141] "Virgin Islands "                   "Yugoslavia "                      
 [143] "Independent Olympic Participants " "Zambia "                          
 [145] "Zimbabwe "                         "Mixed team "                      
-[147] "Totals"                           
+[147] "Totals"
+##we can see 2 gaps on the right of country name
 > library(stringr)
 > prepare_set <- function(file_name) {
 +     df <- read.csv(file_name, skip = 1, header = TRUE,                                   encoding="UTF-8", stringsAsFactors = FALSE)
@@ -588,7 +585,7 @@ olympics <- prepare_set("olympics.csv")
 +     
 +     df
 + }
-> 
+##printed a function with new conditions
 > olympics <- prepare_set("olympics.csv")
 > olympics$Country
   [1] "Afghanistan"                      "Algeria"                         
@@ -665,11 +662,14 @@ olympics <- prepare_set("olympics.csv")
 [143] "Independent Olympic Participants" "Zambia"                          
 [145] "Zimbabwe"                         "Mixed team"                      
 [147] "Totals"                          
-> 
-
-
-
-
+##gaps was deleted
+```R
+```
+5. Додайте до дата фрейму новий стовпець “ID”, в який запишіть трибуквений
+код країна. Наприклад, "AFG", "ALG" і т.п.
+6. Видаліть з дата фрейму останню строку “Totals”
+```R
+```
 prepare_set <- function(file_name) {
     df <- read.csv(file_name, skip = 1, header = TRUE, encoding="UTF-8", stringsAsFactors = FALSE)
     names(df) <- c("Country", "Summer","Gold", "Silver", "Bronze", 
@@ -681,8 +681,9 @@ prepare_set <- function(file_name) {
     df$Country <- str_trim(df$Country)
     df$ID <- str_sub(sapply(country_names, "[", 2),1,3)
     df <- df[-which(df$Country == "Totals"), ]
-    df
-}
+   df
+   }
+##were added to function 2 new conditions - ID and deleted last column Totals
 > olympics <- prepare_set("olympics.csv")
 > head(olympics)
       Country Summer Gold Silver Bronze Total Winter Gold.1 Silver.1 Bronze.1
@@ -699,8 +700,9 @@ prepare_set <- function(file_name) {
 4       0    11      1        2        9             12 ARM
 5       0     2      3        4        5             12 ANZ
 6      12    43    144      155      181            480 AUS
-
-
+##headers of data frame after all changes
+```R
+```
 Питання 1
 Котра країна виграла найбільшу кількість золотих нагород на літніх іграх?
 Функція повинна повернути одне текстове значення.
@@ -712,6 +714,6 @@ answer_one <- function() {
 > answer_one <- function() {
 +     olympics[which.max(olympics$Gold),  "Country"]
 + }
-> answer_one()
+answer_one()
 [1] "United States"
 >
