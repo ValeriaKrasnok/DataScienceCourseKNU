@@ -922,7 +922,7 @@ names(answer_four) <- c("Country", "Points")
 145                         Zimbabwe (ZIM) [ZIM]    18
 146                       Mixed team (ZZX) [ZZX]    38
 147                                       Totals 34848
-
+##printed a df with points of all countries 
 ```R
 ```
 Частина 2.
@@ -956,11 +956,15 @@ names(answer_four) <- c("Country", "Points")
 Функція повинна повернути вектор з трьох текстових значень.
 ```R
 ```
-> sort(census_df$STNAME, decreasing = F)
-##sorted STNAME column in census_df
-> sort(census_df$CENSUS2010POP, decreasing = T)
-
-##sorted CENSUS2010POP column in census_df
+> answer_six <- function(census_df) {
++     df <- census_df[,c("STNAME","CENSUS2010POP")]
++     df <- aggregate(CENSUS2010POP ~ STNAME, df, sum)
++     df <- df[order(-df$CENSUS2010POP),]
++     df <- df[1:3,1]
++    df
++   }
+> answer_six(census_df)
+[1] "California" "Texas"      "New York" 
 ```R
 ```
 Питання 7
@@ -978,6 +982,7 @@ POPESTIMATE2015. Необхідно розглядати всі шість ко�
 +  }
 > answer_seven()
 [1] "Texas"
+##printed only for 2 columns
 ```R
 ```
 Питання 8
@@ -988,9 +993,5 @@ POPESTIMATE2015. Необхідно розглядати всі шість ко�
 ```R
 ```
 answer_eight <- function() {
-          census_df[subset(census_df$REGION==1,census_df$REGION==1, census_df$CTYNAME=="Washington",census_df$POPESTIMATE2015>census_df$POPESTIMATE2014), 
-          data.frame(matrix(ncol = 2, nrow = 147 ))
-x <- c("STNAME","CTYNAME")
-colnames(df) <- x 
-}
-
+  census_df[subset(census_df$REGION==1,census_df$REGION==2, census_df$CTYNAME=="Washington",census_df$POPESTIMATE2015>census_df$POPESTIMATE2014), [1:5,names("STNAME", "CTYNAME")]]
+  }
