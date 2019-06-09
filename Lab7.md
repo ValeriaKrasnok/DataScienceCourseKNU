@@ -756,11 +756,175 @@ Bronze.2 – 1 бал.
 колонок: "Country", "Points".
 ```R
 ```
+y <- olympics$Gold.2 * 3 + olympics$Silver.2 * 2 + olympics$Bronze.2
+> y
+  [1]     2    27   130    16    22   923   569    43    24     1     1   154   276
+ [14]     1     5     2   184     2   411     3    12   846    24  1120    29     7
+ [27]     2    67   420     2   134   327   335     1    14     5    49     1    77
+ [40]    94   895  1500     2    42  1546   269  1068   459     5  1574   213     3
+ [53]     2     1     3     6   962     6    50    49   110     1    55    10  1333
+ [66]   131   866   113   168    90   609     2     4    47     6    15    38     9
+ [79]     1     9     1   109     9    37     2    39     4     8   727     2   203
+ [92]     1    37   985    19     5     2     9    11   520    39    10     4   572
+[105]  1042    14  2526   287     4     2    11    17     6    58    56   148   268
+[118]     4     2     4  1217   630     6    32     4     4    44     1     2    27
+[131]    19   191    14   220     3  5684    16    38    18     4     2   171     4
+[144]     3    18    38 34848
+names(answer_four) <- c("Country", "Points")
+> x = olympics$Country
+> answer_four<- data.frame(x,y)
+> answer_four
+                                               x     y
+1                              Afghanistan (AFG)     2
+2                                  Algeria (ALG)    27
+3                                Argentina (ARG)   130
+4                                  Armenia (ARM)    16
+5                        Australasia (ANZ) [ANZ]    22
+6                      Australia (AUS) [AUS] [Z]   923
+7                                  Austria (AUT)   569
+8                               Azerbaijan (AZE)    43
+9                                  Bahamas (BAH)    24
+10                                 Bahrain (BRN)     1
+11                          Barbados (BAR) [BAR]     1
+12                                 Belarus (BLR)   154
+13                                 Belgium (BEL)   276
+14                                 Bermuda (BER)     1
+15                       Bohemia (BOH) [BOH] [Z]     5
+16                                Botswana (BOT)     2
+17                                  Brazil (BRA)   184
+18               British West Indies (BWI) [BWI]     2
+19                            Bulgaria (BUL) [H]   411
+20                                 Burundi (BDI)     3
+21                                Cameroon (CMR)    12
+22                                  Canada (CAN)   846
+23                               Chile (CHI) [I]    24
+24                             China (CHN) [CHN]  1120
+25                                Colombia (COL)    29
+26                              Costa Rica (CRC)     7
+27                       Ivory Coast (CIV) [CIV]     2
+28                                 Croatia (CRO)    67
+29                                Cuba (CUB) [Z]   420
+30                                  Cyprus (CYP)     2
+31                    Czech Republic (CZE) [CZE]   134
+32                    Czechoslovakia (TCH) [TCH]   327
+33                             Denmark (DEN) [Z]   335
+34                            Djibouti (DJI) [B]     1
+35                      Dominican Republic (DOM)    14
+36                                 Ecuador (ECU)     5
+37                         Egypt (EGY) [EGY] [Z]    49
+38                                 Eritrea (ERI)     1
+39                                 Estonia (EST)    77
+40                                Ethiopia (ETH)    94
+41                                 Finland (FIN)   895
+42                      France (FRA) [O] [P] [Z]  1500
+43                                   Gabon (GAB)     2
+44                                 Georgia (GEO)    42
+45                       Germany (GER) [GER] [Z]  1546
+46            United Team of Germany (EUA) [EUA]   269
+47                      East Germany (GDR) [GDR]  1068
+48                      West Germany (FRG) [FRG]   459
+49                             Ghana (GHA) [GHA]     5
+50                 Great Britain (GBR) [GBR] [Z]  1574
+51                              Greece (GRE) [Z]   213
+52                                 Grenada (GRN)     3
+53                               Guatemala (GUA)     2
+54                            Guyana (GUY) [GUY]     1
+55                               Haiti (HAI) [J]     3
+56                         Hong Kong (HKG) [HKG]     6
+57                                 Hungary (HUN)   962
+58                                 Iceland (ISL)     6
+59                               India (IND) [F]    50
+60                               Indonesia (INA)    49
+61                                Iran (IRI) [K]   110
+62                                    Iraq (IRQ)     1
+63                                 Ireland (IRL)    55
+64                                  Israel (ISR)    10
+65                           Italy (ITA) [M] [S]  1333
+66                           Jamaica (JAM) [JAM]   131
+67                                   Japan (JPN)   866
+68                              Kazakhstan (KAZ)   113
+69                                   Kenya (KEN)   168
+70                             North Korea (PRK)    90
+71                             South Korea (KOR)   609
+72                                  Kuwait (KUW)     2
+73                              Kyrgyzstan (KGZ)     4
+74                                  Latvia (LAT)    47
+75                                 Lebanon (LIB)     6
+76                           Liechtenstein (LIE)    15
+77                               Lithuania (LTU)    38
+78                          Luxembourg (LUX) [O]     9
+79                               Macedonia (MKD)     1
+80                          Malaysia (MAS) [MAS]     9
+81                               Mauritius (MRI)     1
+82                                  Mexico (MEX)   109
+83                                 Moldova (MDA)     9
+84                                Mongolia (MGL)    37
+85                              Montenegro (MNE)     2
+86                                 Morocco (MAR)    39
+87                              Mozambique (MOZ)     4
+88                                 Namibia (NAM)     8
+89                         Netherlands (NED) [Z]   727
+90          Netherlands Antilles (AHO) [AHO] [I]     2
+91                       New Zealand (NZL) [NZL]   203
+92                                   Niger (NIG)     1
+93                                 Nigeria (NGR)    37
+94                              Norway (NOR) [Q]   985
+95                                Pakistan (PAK)    19
+96                                  Panama (PAN)     5
+97                                Paraguay (PAR)     2
+98                                Peru (PER) [L]     9
+99                             Philippines (PHI)    11
+100                                 Poland (POL)   520
+101                               Portugal (POR)    39
+102                            Puerto Rico (PUR)    10
+103                                  Qatar (QAT)     4
+104                                Romania (ROU)   572
+105                           Russia (RUS) [RUS]  1042
+106                   Russian Empire (RU1) [RU1]    14
+107                     Soviet Union (URS) [URS]  2526
+108                     Unified Team (EUN) [EUN]   287
+109                           Saudi Arabia (KSA)     4
+110                                Senegal (SEN)     2
+111                           Serbia (SRB) [SRB]    11
+112            Serbia and Montenegro (SCG) [SCG]    17
+113                              Singapore (SIN)     6
+114                         Slovakia (SVK) [SVK]    58
+115                               Slovenia (SLO)    56
+116                           South Africa (RSA)   148
+117                              Spain (ESP) [Z]   268
+118                        Sri Lanka (SRI) [SRI]     4
+119                                  Sudan (SUD)     2
+120                           Suriname (SUR) [E]     4
+121                             Sweden (SWE) [Z]  1217
+122                            Switzerland (SUI)   630
+123                                  Syria (SYR)     6
+124            Chinese Taipei (TPE) [TPE] [TPE2]    32
+125                             Tajikistan (TJK)     4
+126                         Tanzania (TAN) [TAN]     4
+127                               Thailand (THA)    44
+128                                   Togo (TOG)     1
+129                                  Tonga (TGA)     2
+130              Trinidad and Tobago (TRI) [TRI]    27
+131                                Tunisia (TUN)    19
+132                                 Turkey (TUR)   191
+133                                 Uganda (UGA)    14
+134                                Ukraine (UKR)   220
+135                   United Arab Emirates (UAE)     3
+136          United States (USA) [P] [Q] [R] [Z]  5684
+137                                Uruguay (URU)    16
+138                             Uzbekistan (UZB)    38
+139                              Venezuela (VEN)    18
+140                                Vietnam (VIE)     4
+141                         Virgin Islands (ISV)     2
+142                       Yugoslavia (YUG) [YUG]   171
+143 Independent Olympic Participants (IOP) [IOP]     4
+144                           Zambia (ZAM) [ZAM]     3
+145                         Zimbabwe (ZIM) [ZIM]    18
+146                       Mixed team (ZZX) [ZZX]    38
+147                                       Totals 34848
 
-
-
-
-
+```R
+```
 Частина 2.
 Питання 5
 В якому штаті (state) більше всього округів (county)?
