@@ -723,12 +723,44 @@ answer_one()
 іграх?
 ```R
 ```
-
-
-
-
+> answer_two <- function() {
++      olympics[which.max(olympics$Summer-olympics$Winter),  "Country"]
++  }
+> answer_two()
+[1] "Egypt"
 ```R
 ```
+Питання 3
+В якій крайні найбільша різниця між літніми та зимовими золотими нагородами
+відносно до загальної кількості нагород (Summer Gold - Winter Gold) / Total Gold.
+Врахувати тільки країни які мають як мінімум по одній нагороді в літніх та
+зимових іграх.
+Функція повинна повернути одне текстове значення.
+```R
+```
+> olympics1 <- subset(olympics, Summer>=1 & Winter>=1)
+> olympics1
+##countries that have one and more awards 
+> answer_three <- function() {
++     olympics1[which.max((olympics1$Summer-olympics1$Winter)/olympics1$Total),  "Country"]
++ }
+> answer_three()
+[1] "Guatemala (GUA)"
+```R
+```
+Питання 4
+Необхідно знайти кількість балів по кожній крайні. Бали рахуються наступним
+чином: Золота нагорода Gold.2 це три бали, срібна Silver.2 - 2 бали та бронзова
+Bronze.2 – 1 бал.
+Функція повинна повертати дата фрейм довжиною 146, який складається з двох
+колонок: "Country", "Points".
+```R
+```
+
+
+
+
+
 Частина 2.
 Питання 5
 В якому штаті (state) більше всього округів (county)?
